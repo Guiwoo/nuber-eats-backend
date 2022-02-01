@@ -34,3 +34,11 @@
         - But this one needs dirty typing on graplql mutatin{crate(typename:{requried args })}
       - @ArgsType() Send to seperate value not put in a object !!
         - More Clean Code !
+  - Validating
+    - npm i class-validator
+    - add pipline on main.ts done
+    - ```
+      @IsEmail()
+      @Field((type) => String)
+      name: string;
+      ```
