@@ -22,3 +22,15 @@
   - Arguments
     - @Args('veganOnly') veganOnly: boolean write on resolver.ts
   - Mutation
+    - Using @Args decoratorts pass the args
+      - ```
+        @Args("argument : name") name :string
+        ```
+    - How about handle more than 2 args ?
+      - @InputType() type of data wanna input one Object
+        - ```
+          @Filed(type=>String)\n name:string,
+          ```
+        - But this one needs dirty typing on graplql mutatin{crate(typename:{requried args })}
+      - @ArgsType() Send to seperate value not put in a object !!
+        - More Clean Code !

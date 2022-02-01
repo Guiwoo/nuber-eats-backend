@@ -1,5 +1,5 @@
-import { Module } from "@nestjs/common";
-import { RestaurantResolver } from "./restaurant.resolver";
+import { Module } from '@nestjs/common';
+import { RestaurantResolver } from './restaurant.resolver';
 
 @Module({
   providers: [RestaurantResolver],

@@ -24,8 +24,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'off',
     'prettier/prettier': [
       'error',
-      { bracketSpacing: true },
-      { usePrettierrc: false },
+      { bracketSpacing: true, singleQuote: true, endOfLine: 'auto' },
     ],
   },
 };
