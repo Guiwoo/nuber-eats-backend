@@ -60,4 +60,9 @@
 
 - PostgresSQL,Postico "use Home Brew to download"
 - Connect Db with nestJS [Check Here](https://docs.nestjs.com/techniques/database#database)
+
   - npm install --save @nestjs/typeorm typeorm pg
+
+- Using enviroment by [NestJS Configurations](https://docs.nestjs.com/techniques/configuration)
+  - Cross-env can use multiple enviroments
+  - "start:dev": "cross-env ENV=dev nest start --watch", Setting Package.json file
