@@ -64,5 +64,10 @@
   - npm install --save @nestjs/typeorm typeorm pg
 
 - Using enviroment by [NestJS Configurations](https://docs.nestjs.com/techniques/configuration)
+
   - Cross-env can use multiple enviroments
   - "start:dev": "cross-env ENV=dev nest start --watch", Setting Package.json file
+
+- Most Powerful schema description language [joi](https://www.npmjs.com/package/joi)
+  - How to use on NestJS? [Check Here](https://docs.nestjs.com/techniques/configuration#schema-validation)
+  - Give more security running my app
