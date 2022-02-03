@@ -71,3 +71,14 @@
 - Most Powerful schema description language [joi](https://www.npmjs.com/package/joi)
   - How to use on NestJS? [Check Here](https://docs.nestjs.com/techniques/configuration#schema-validation)
   - Give more security running my app
+
+## TypeORM and Sent
+
+- Entity is a class that maps to database table
+
+  - @Entity for save data on db
+  - @Field for GraphQL Schema
+  - Wanna Edit Field ?
+  - Just editting on specific module file
+
+- Just add on TypeModule ,entiti as array
