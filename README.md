@@ -82,3 +82,7 @@
   - Just editting on specific module file
 
 - Just add on TypeModule ,entiti as array
+
+- [Active Record🎄](https://github.com/typeorm/typeorm/blob/master/docs/active-record-data-mapper.md) vs [Data Mapper 🎄](https://github.com/typeorm/typeorm/blob/master/docs/active-record-data-mapper.md#what-is-the-data-mapper-pattern)
+
+- Mapped Types
