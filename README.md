@@ -104,6 +104,7 @@
   - [TypeORM Special Module](https://typeorm.io/#/entities/special-columns)
 
 - 2. Create resolvers, service and Connect on Module
+
   - 1. Have to type on Imports in Module
        `imports: [TypeOrmModule.forFeature([User])],`
   - 2. Binding Repository in service
@@ -111,6 +112,7 @@
   - 3. Binding service to User Resolver
        `constructor(private readonly userService: UsersService) {}
   - 4. Give a provider in Module` `providers: [UsersResolver, UsersService],`
+
 - 3. Mutation and DTO
 
   - PrevSteps) entity make comfitable to graphQL as well
@@ -134,4 +136,18 @@
       - Output
         - Make 2Fields For Error and Ok
 
-- 4. s
+- 4. EnumType
+
+  - To DB try to write on Specific number
+    - @Column({ type: 'enum', enum: UserRole })
+  - Write on GrpahQL as well
+    - registerEnumType(UserRole, { name: 'UserRole' });
+
+- 5. CreateAcc on service.ts
+
+  - createAcc has params type of CreateAccInput
+  - this.somethig,save this.something.create different
+    - can chain it for shorter lines (this.s.save(this.s.create({a,b,c})))
+
+- 6. Hashing Password
+  - Using by bcrypt on Entity before saving on database
