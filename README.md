@@ -111,3 +111,27 @@
   - 3. Binding service to User Resolver
        `constructor(private readonly userService: UsersService) {}
   - 4. Give a provider in Module` `providers: [UsersResolver, UsersService],`
+- 3. Mutation and DTO
+
+  - PrevSteps) entity make comfitable to graphQL as well
+    - @ObjectType,@InputTtyp({isAbstract:true})
+    - Write @Field Section on User Entity
+  - PrevSteps) CoreEntity as well
+
+  - Ready to Make a DTO
+
+    ```
+    @Mutation((returns) => CreateAccOutput)
+    createAccount(@Args('input') createAccInput: CreateAccInput) {}
+    ```
+
+    - let them distinguish on input data and output data
+
+      - Input
+
+        - Use own Serviced by [nestJS](https://docs.nestjs.com/openapi/mapped-types#pick)
+
+      - Output
+        - Make 2Fields For Error and Ok
+
+- 4. s
