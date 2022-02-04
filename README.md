@@ -98,6 +98,16 @@
 - role(client | owner | delivery )
 
 - 1. Create extends Modle ? Module
+
   - Don't want to repeat id part So Generate one more module for standard
   - extends other module , don't repeat them twice
   - [TypeORM Special Module](https://typeorm.io/#/entities/special-columns)
+
+- 2. Create resolvers, service and Connect on Module
+  - 1. Have to type on Imports in Module
+       `imports: [TypeOrmModule.forFeature([User])],`
+  - 2. Binding Repository in service
+       `@InjectRepository(User) private readonly users: Repository<User>,`
+  - 3. Binding service to User Resolver
+       `constructor(private readonly userService: UsersService) {}
+  - 4. Give a provider in Module` `providers: [UsersResolver, UsersService],`
