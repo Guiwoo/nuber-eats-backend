@@ -86,3 +86,18 @@
 - [Active Record🎄](https://github.com/typeorm/typeorm/blob/master/docs/active-record-data-mapper.md) vs [Data Mapper 🎄](https://github.com/typeorm/typeorm/blob/master/docs/active-record-data-mapper.md#what-is-the-data-mapper-pattern)
 
 - Mapped Types
+
+## User Model
+
+- id
+- createdAt
+- updatedAt
+
+- email
+- password
+- role(client | owner | delivery )
+
+- 1. Create extends Modle ? Module
+  - Don't want to repeat id part So Generate one more module for standard
+  - extends other module , don't repeat them twice
+  - [TypeORM Special Module](https://typeorm.io/#/entities/special-columns)
