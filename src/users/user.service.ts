@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CreateAccInput } from '../dtos/create-acc.dto';
-import { User } from './user.entity';
+import { CreateAccInput } from './dtos/create-acc.dto';
+import { LoginInput } from './dtos/login.dto';
+import { User } from './entities/user.entity';
 
 @Injectable()
 export class UsersService {
@@ -27,5 +28,36 @@ export class UsersService {
       return { ok: false, error: 'Could not create account do it later' };
     }
     // create user & hash the password
+  }
+
+  async login({
+    email,
+    password,
+  }: LoginInput): Promise<{ ok: boolean; error?: string; token?: string }> {
+    try {
+      const user = await this.users.findOne({ email });
+      if (!user) {
+        return {
+          ok: false,
+          error: 'Email does not Exsist',
+        };
+      }
+      const passwordCorrect = await user.checkPassword(password);
+      if (!passwordCorrect) {
+        return {
+          ok: false,
+          error: 'Wrong password',
+        };
+      }
+      return {
+        ok: true,
+        token: 'testFromService',
+      };
+    } catch (error) {
+      return {
+        ok: false,
+        error,
+      };
+    }
   }
 }

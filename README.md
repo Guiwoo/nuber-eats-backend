@@ -89,14 +89,6 @@
 
 ## User Model
 
-- id
-- createdAt
-- updatedAt
-
-- email
-- password
-- role(client | owner | delivery )
-
 - 1. Create extends Modle ? Module
 
   - Don't want to repeat id part So Generate one more module for standard
@@ -112,6 +104,8 @@
   - 3. Binding service to User Resolver
        `constructor(private readonly userService: UsersService) {}
   - 4. Give a provider in Module` `providers: [UsersResolver, UsersService],`
+
+### Create Account
 
 - 3. Mutation and DTO
 
@@ -151,3 +145,10 @@
 
 - 6. Hashing Password
   - Using by bcrypt on Entity before saving on database
+
+### Login
+
+- 7. Create reserver,service for login
+  - create reserver for login
+  - create service for login
+  - expend user class for checking hashed password
