@@ -149,6 +149,24 @@
 ### Login
 
 - 7. Create reserver,service for login
+
   - create reserver for login
   - create service for login
   - expend user class for checking hashed password
+
+- 8. Authentication
+
+  - #### Manual Way
+
+    - 1. Json WebToken [Go Check](https://www.npmjs.com/package/jsonwebtoken)
+
+      - Point is not to be secret
+      - Valid fro backend verify who we are
+
+    - 2. Create Module for jwt
+
+      - nest g mo jwt
+      - nest g s jwt
+      - connect to on userService for using global set a decorator on jwt service
+
+    - 3. make forRoot on Static service
