@@ -192,4 +192,4 @@
 
           - will call every signle request
 
-        - guard
+        - guard will stop the reqeust [Guard](https://docs.nestjs.com/guards#guards)
