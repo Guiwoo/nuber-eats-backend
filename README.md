@@ -172,8 +172,24 @@
     - 3. make forRoot on Static service
 
     - 4. MiddleWare for getting token from user
+
       - Same like Express haritance from nextmiddleware use req,res,next
       - after function done have to add next() before closing bracket
       - App module implements nestmodule configure
       - consumer.apply(JwtMiddleware).forRoutes
-      - or can use app.use(middleware name) on main.ts
+
+      - If you wanna apply all routes ?
+
+        - can use app.use(middleware name) on main.ts
+        - Not working if you are using class
+
+      - verify that token in headers
+      - share the request graphql
+
+        - set a user on header with decoded token
+        - in grpahql module add context
+        - can call it reservers anywhere @context
+
+          - will call every signle request
+
+        - guard
