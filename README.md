@@ -170,3 +170,10 @@
       - connect to on userService for using global set a decorator on jwt service
 
     - 3. make forRoot on Static service
+
+    - 4. MiddleWare for getting token from user
+      - Same like Express haritance from nextmiddleware use req,res,next
+      - after function done have to add next() before closing bracket
+      - App module implements nestmodule configure
+      - consumer.apply(JwtMiddleware).forRoutes
+      - or can use app.use(middleware name) on main.ts
