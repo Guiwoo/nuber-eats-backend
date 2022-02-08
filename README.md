@@ -193,3 +193,32 @@
           - will call every signle request
 
         - guard will stop the reqeust [Guard](https://docs.nestjs.com/guards#guards)
+
+## Email Verification
+
+- Use one to one field
+
+  - verifiy from email to User
+  - Need to add JoinColumn on email section
+
+- Generate random text
+
+  - [uuid](https://www.npmjs.com/package/uuid)
+
+- Create Verification during create Acc
+
+  - use save code and send user info
+  - code ? from entity using beforeinsert "means before saving"
+
+- Edit Profile as well when user changes the email ? need to re-verify email
+
+- If i need to use relation data ? I have to ask typeorm for data
+
+  - codecode.findOne({~},relation:["user"] or read something id will return id )
+
+- OneToOne Field can set a what happend delete { onDelete: 'CASCADE' }
+
+  - Like Django
+
+- Select Flase on Entity so when i login, get error because password is undefined
+  - Have to load from database when i call findone function { select: ['password'] } add this one as well

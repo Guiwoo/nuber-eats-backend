@@ -6,11 +6,14 @@ import { LoginInput } from './dtos/login.dto';
 import { User } from './entities/user.entity';
 import { JwtService } from 'src/jwt/jwt.service';
 import { EditProfileInput, EditProfileOutput } from './dtos/edit-profile.dto';
+import { Verification } from './entities/verification.entity';
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectRepository(User) private readonly users: Repository<User>,
+    @InjectRepository(Verification)
+    private readonly verification: Repository<Verification>,
     private readonly jwtService: JwtService,
   ) {}
 
@@ -25,7 +28,14 @@ export class UsersService {
       if (exists) {
         return { ok: false, error: 'There is a user with that email' };
       }
-      await this.users.save(this.users.create({ email, password, role }));
+      const user = await this.users.save(
+        this.users.create({ email, password, role }),
+      );
+      await this.verification.save(
+        this.verification.create({
+          user,
+        }),
+      );
       return { ok: true };
     } catch (e) {
       return { ok: false, error: 'Could not create account do it later' };
@@ -38,7 +48,10 @@ export class UsersService {
     password,
   }: LoginInput): Promise<{ ok: boolean; error?: string; token?: string }> {
     try {
-      const user = await this.users.findOne({ email });
+      const user = await this.users.findOne(
+        { email },
+        { select: ['id', 'password'] },
+      );
       if (!user) {
         return {
           ok: false,
@@ -75,10 +88,30 @@ export class UsersService {
     const user = await this.users.findOne(userId);
     if (email) {
       user.email = email;
+      user.verified = false;
+      await this.verification.save(this.verification.create({ user }));
     }
     if (password) {
       user.password = password;
     }
     return this.users.save(user);
+  }
+
+  async verifyEmail(code: string): Promise<boolean> {
+    try {
+      const verification = await this.verification.findOne(
+        { code },
+        { relations: ['user'] },
+      );
+      if (verification) {
+        verification.user.verified = true;
+        this.users.save(verification.user);
+        return true;
+      }
+      throw new Error();
+    } catch (e) {
+      console.log(e);
+      return false;
+    }
   }
 }
