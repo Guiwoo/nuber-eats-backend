@@ -5,7 +5,10 @@
 ## NestJS
 
 - AppModule Everthing inside && Main.ts is runnning acutal app
+
   - Make a Module nest g mo "name"
+
+- Refectoring "Reserver" is just doorman get a input send to service, get ouput and send to gql
 
 ## GraphQL API
 
