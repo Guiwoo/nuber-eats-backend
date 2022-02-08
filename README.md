@@ -224,4 +224,8 @@
   - Like Django
 
 - Select Flase on Entity so when i login, get error because password is undefined
+
   - Have to load from database when i call findone function { select: ['password'] } add this one as well
+
+- email template ? suck Use the single email tempalte
+  - MailGun or use nestjsEmail
