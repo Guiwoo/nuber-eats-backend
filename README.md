@@ -240,3 +240,15 @@
   - 1. describe("UserServcie",function)
   - 2. it.todo(something what you want to test)
   - 3. beforeAll "Getting the service module and offer provider userservice"
+
+  - 1. jest RootDir fixed on json
+  - 2. Mock "fake function or class implementaion"
+
+  - 1. Testing function not a outcome from a function
+
+    - every single lines testing
+    - Each line of code
+    - How our code running
+    - Don't care with real data and database
+
+  - 2.
