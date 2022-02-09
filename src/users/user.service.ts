@@ -29,7 +29,6 @@ export class UsersService {
     // check new user
     try {
       const exists = await this.users.findOne({ email });
-      console.log(exists);
       if (exists) {
         return { ok: false, error: 'There is a user with that email' };
       }
@@ -76,19 +75,17 @@ export class UsersService {
     } catch (error) {
       return {
         ok: false,
-        error,
+        error: 'Can not log-in User',
       };
     }
   }
   async findById(id: number): Promise<UserProfileOutput> {
     try {
-      const user = await this.users.findOne({ id });
-      if (user) {
-        return {
-          ok: true,
-          user: user,
-        };
-      }
+      const user = await this.users.findOneOrFail({ id });
+      return {
+        ok: true,
+        user: user,
+      };
     } catch (error) {
       return { ok: false, error: 'User Does not Exist' };
     }
@@ -116,7 +113,7 @@ export class UsersService {
         ok: true,
       };
     } catch (error) {
-      return { ok: false, error };
+      return { ok: false, error: 'Can not update Your Profile' };
     }
   }
 
