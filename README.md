@@ -229,3 +229,14 @@
 
 - email template ? suck Use the single email tempalte
   - MailGun or use nestjsEmail
+
+## Test UserModel
+
+- ### .spec.ts
+
+  - Mandatory to testing
+  - Unit Testing as much as possible isolate functions
+
+  - 1. describe("UserServcie",function)
+  - 2. it.todo(something what you want to test)
+  - 3. beforeAll "Getting the service module and offer provider userservice"
