@@ -252,4 +252,19 @@
     - Don't care with real data and database
 
   - 2. Jest can Fake the module as well !
+
     - jest.mock("jsonwebtoken",fucntion) like this !!
+
+  - ### E2E Test
+
+    - Error
+
+      - 1. Cannot find module "need to configure path" in test folder
+      - 2. Config Validation "NODE_ENV" Add on joi schema and copy and paste on env.test
+
+    - Make for the test db
+      - 1. configure on App module
+      - 2. write on same varibles on .env.test
+      - 3. make db manually
+      - 4. Set afterAll(fn=>app.close())
+      - 5. Open db and after testing drop the db make it clear
