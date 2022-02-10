@@ -251,4 +251,5 @@
     - How our code running
     - Don't care with real data and database
 
-  - 2.
+  - 2. Jest can Fake the module as well !
+    - jest.mock("jsonwebtoken",fucntion) like this !!
