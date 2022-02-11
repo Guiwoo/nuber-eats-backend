@@ -79,6 +79,7 @@ export class UsersService {
       };
     }
   }
+
   async findById(id: number): Promise<UserProfileOutput> {
     try {
       const user = await this.users.findOneOrFail({ id });

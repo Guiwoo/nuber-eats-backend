@@ -283,9 +283,14 @@
       - tobe , toEqual is different "check exact same output","Checking type"
 
     - UseProfile
+
       - Making a UserRepository
         - let userRepo: Repository<User>;
       - Get a user token from login test
       - const [user] = await userRepo.find();
         - userId = user.id;
       - Find first user and get the id beforeAll() testing in descrbie(userprofile)
+
+    - Me
+      - There's an bug on jwtMiddleware findbyid and it returs an object not a user
+      - Use jwtToken which we got after loggin in
