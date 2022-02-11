@@ -276,7 +276,16 @@
       - 2. request(app.getHttpServer) set a graphql end point and send query
       - 3. query: `` use Backtick it will allow you to use enter between backticks
 
-      - Login Test
-        - Make login case and wrong case test both of them
-        - query as like graphql just copy from localhost
-        - tobe , toEqual is different "check exact same output","Checking type"
+    - Login Test
+
+      - Make login case and wrong case test both of them
+      - query as like graphql just copy from localhost
+      - tobe , toEqual is different "check exact same output","Checking type"
+
+    - UseProfile
+      - Making a UserRepository
+        - let userRepo: Repository<User>;
+      - Get a user token from login test
+      - const [user] = await userRepo.find();
+        - userId = user.id;
+      - Find first user and get the id beforeAll() testing in descrbie(userprofile)
