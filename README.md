@@ -263,8 +263,14 @@
       - 2. Config Validation "NODE_ENV" Add on joi schema and copy and paste on env.test
 
     - Make for the test db
+
       - 1. configure on App module
       - 2. write on same varibles on .env.test
       - 3. make db manually
       - 4. Set afterAll(fn=>app.close())
       - 5. Open db and after testing drop the db make it clear
+
+    - GraphQL reserver test
+      - 1. import \* as request from 'supertest' because need to request and post some data
+      - 2. request(app.getHttpServer) set a graphql end point and send query
+      - 3. query: `` use Backtick it will allow you to use enter between backticks
