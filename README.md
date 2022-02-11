@@ -271,6 +271,12 @@
       - 5. Open db and after testing drop the db make it clear
 
     - GraphQL reserver test
+
       - 1. import \* as request from 'supertest' because need to request and post some data
       - 2. request(app.getHttpServer) set a graphql end point and send query
       - 3. query: `` use Backtick it will allow you to use enter between backticks
+
+      - Login Test
+        - Make login case and wrong case test both of them
+        - query as like graphql just copy from localhost
+        - tobe , toEqual is different "check exact same output","Checking type"
