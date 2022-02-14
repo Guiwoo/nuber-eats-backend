@@ -304,6 +304,12 @@
   - @Inputtype can set a name
 
 - ### Restaurant Create
+
+  - Created Dto and check omittype to exclude id,category,owner
+  - use PickType instead Omitting on Input
+  - Add Category on Restaurant Module can use Category repository
+  - Set Create NewRes and set a owner and catoegry
+
 - ### Restaurant Read
 - ### Restaurant Update
 - ### Restaurant Delete
