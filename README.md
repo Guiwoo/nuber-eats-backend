@@ -310,6 +310,17 @@
   - Add Category on Restaurant Module can use Category repository
   - Set Create NewRes and set a owner and catoegry
 
+  - Create Decorator for Roles because don't wanna repeat if else a lot
+    - AllowedRoles => type of enum's key,vaule
+    - keyof typeof UserRoles and setMetadata("role",params)
+  - AuthGuard Add on Globally
+    - AuthModule add AppGuard as provider and useClass "AuthGurad"
+    - add On App Module for using AuthGuard
+    - Problems "Some query and mutation is public but is Locked by app guard"
+      - Using Role decorator instead AuthGuard
+      - check authguard can read roles data if is undefined? it means Public
+      - on our guard handle if has a roles , roles has data handling retrun true
+
 - ### Restaurant Read
 - ### Restaurant Update
 - ### Restaurant Delete
