@@ -305,22 +305,40 @@
 
 - ### Restaurant Create
 
-  - Created Dto and check omittype to exclude id,category,owner
-  - use PickType instead Omitting on Input
-  - Add Category on Restaurant Module can use Category repository
-  - Set Create NewRes and set a owner and catoegry
+  - <b>Create Restaurant</b>
 
-  - Create Decorator for Roles because don't wanna repeat if else a lot
-    - AllowedRoles => type of enum's key,vaule
-    - keyof typeof UserRoles and setMetadata("role",params)
-  - AuthGuard Add on Globally
-    - AuthModule add AppGuard as provider and useClass "AuthGurad"
-    - add On App Module for using AuthGuard
-    - Problems "Some query and mutation is public but is Locked by app guard"
-      - Using Role decorator instead AuthGuard
-      - check authguard can read roles data if is undefined? it means Public
-      - on our guard handle if has a roles , roles has data handling retrun true
+    - Created Dto and check omittype to exclude id,category,owner
+    - use PickType instead Omitting on Input
+    - Add Category on Restaurant Module can use Category repository
+    - Set Create NewRes and set a owner and catoegry
+
+    - Create Decorator for Roles because don't wanna repeat if else a lot
+      - !!Why Decorator ? for typeorm and graphql
+      - AllowedRoles => type of enum's key,vaule
+      - keyof typeof UserRoles and setMetadata("role",params)
+    - AuthGuard Add on Globally
+      - AuthModule add AppGuard as provider and useClass "AuthGurad"
+      - add On App Module for using AuthGuard
+      - Problems "Some query and mutation is public but is Locked by app guard"
+        - Using Role decorator instead AuthGuard
+        - check authguard can read roles data if is undefined? it means Public
+        - on our guard handle if has a roles , roles has data handling retrun true
 
 - ### Restaurant Read
+
+  - <b>See Categories</b>
+  - <b>See Restaurants by Category (Pagingation)</b>
+  - <b>See Restaurants (pagination)</b>
+  - <b>See Restaurant</b>
+
 - ### Restaurant Update
+
+  - <b>Edit Restauarnt</b>
+
 - ### Restaurant Delete
+
+  - <b>Delete Restaurant</b>
+
+- ### Create Dish
+- ### Edit Dish
+- ### Delete Dish
