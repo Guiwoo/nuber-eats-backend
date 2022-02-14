@@ -301,6 +301,8 @@
 
   - [One to Many](https://typeorm.io/#/undefined/creating-a-many-to-one--one-to-many-relation)
 
+  - @Inputtype can set a name
+
 - ### Restaurant Create
 - ### Restaurant Read
 - ### Restaurant Update
