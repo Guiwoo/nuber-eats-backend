@@ -18,6 +18,7 @@ import { Verification } from './users/entities/verification.entity';
 import { MailModule } from './mail/mail.module';
 import { Restaurant } from './restaurant/entities/restaurant.entity';
 import { Category } from './restaurant/entities/category.entity';
+import { RestaurantModule } from './restaurant/restaurant.module';
 
 @Module({
   imports: [
@@ -63,6 +64,7 @@ import { Category } from './restaurant/entities/category.entity';
       fromEamil: process.env.MAILGUN_FROM_EMAIL,
     }),
     UsersModule,
+    RestaurantModule,
   ],
   controllers: [],
   providers: [],
