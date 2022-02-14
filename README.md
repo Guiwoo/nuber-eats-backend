@@ -334,6 +334,7 @@
 - ### Restaurant Update
 
   - <b>Edit Restauarnt</b>
+    - Make dto for PartialType make inputs Optional
 
 - ### Restaurant Delete
 
