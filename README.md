@@ -255,42 +255,53 @@
 
     - jest.mock("jsonwebtoken",fucntion) like this !!
 
-  - ### E2E Test
+- ### E2E Test
 
-    - Error
+  - Error
 
-      - 1. Cannot find module "need to configure path" in test folder
-      - 2. Config Validation "NODE_ENV" Add on joi schema and copy and paste on env.test
+    - 1. Cannot find module "need to configure path" in test folder
+    - 2. Config Validation "NODE_ENV" Add on joi schema and copy and paste on env.test
 
-    - Make for the test db
+  - Make for the test db
 
-      - 1. configure on App module
-      - 2. write on same varibles on .env.test
-      - 3. make db manually
-      - 4. Set afterAll(fn=>app.close())
-      - 5. Open db and after testing drop the db make it clear
+    - 1. configure on App module
+    - 2. write on same varibles on .env.test
+    - 3. make db manually
+    - 4. Set afterAll(fn=>app.close())
+    - 5. Open db and after testing drop the db make it clear
 
-    - GraphQL reserver test
+  - GraphQL reserver test
 
-      - 1. import \* as request from 'supertest' because need to request and post some data
-      - 2. request(app.getHttpServer) set a graphql end point and send query
-      - 3. query: `` use Backtick it will allow you to use enter between backticks
+    - 1. import \* as request from 'supertest' because need to request and post some data
+    - 2. request(app.getHttpServer) set a graphql end point and send query
+    - 3. query: `` use Backtick it will allow you to use enter between backticks
 
-    - Login Test
+  - Login Test
 
-      - Make login case and wrong case test both of them
-      - query as like graphql just copy from localhost
-      - tobe , toEqual is different "check exact same output","Checking type"
+    - Make login case and wrong case test both of them
+    - query as like graphql just copy from localhost
+    - tobe , toEqual is different "check exact same output","Checking type"
 
-    - UseProfile
+  - UseProfile
 
-      - Making a UserRepository
-        - let userRepo: Repository<User>;
-      - Get a user token from login test
-      - const [user] = await userRepo.find();
-        - userId = user.id;
-      - Find first user and get the id beforeAll() testing in descrbie(userprofile)
+    - Making a UserRepository
+      - let userRepo: Repository<User>;
+    - Get a user token from login test
+    - const [user] = await userRepo.find();
+      - userId = user.id;
+    - Find first user and get the id beforeAll() testing in descrbie(userprofile)
 
-    - Me
-      - There's an bug on jwtMiddleware findbyid and it returs an object not a user
-      - Use jwtToken which we got after loggin in
+  - Me
+    - There's an bug on jwtMiddleware findbyid and it returs an object not a user
+    - Use jwtToken which we got after loggin in
+
+## Restaurant Model
+
+- name, category, address, coverImage
+
+  - [One to Many](https://typeorm.io/#/undefined/creating-a-many-to-one--one-to-many-relation)
+
+- ### Restaurant Create
+- ### Restaurant Read
+- ### Restaurant Update
+- ### Restaurant Delete
