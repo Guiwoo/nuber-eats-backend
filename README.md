@@ -327,6 +327,7 @@
 - ### Restaurant Read
 
   - <b>See Categories</b>
+    - ComputeField Dynamic Field [ResolvField](https://docs.nestjs.com/graphql/resolverss)
   - <b>See Restaurants by Category (Pagingation)</b>
   - <b>See Restaurants (pagination)</b>
   - <b>See Restaurant</b>
@@ -335,6 +336,7 @@
 
   - <b>Edit Restauarnt</b>
     - Make dto for PartialType make inputs Optional
+    - [CoustomRepository](https://typeorm.io/#/custom-repositorys)
 
 - ### Restaurant Delete
 
