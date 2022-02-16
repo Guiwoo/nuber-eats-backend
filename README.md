@@ -365,6 +365,7 @@
   - Needs a Restaurant Id, Don't wanna load whole relationship
   - [Column Types](https://orkhan.gitbook.io/typeorm/docs/entities#column-types)
     - Can give a Options !! "Can replace with one to many, many to one"
+  - Make a New Resolver, add Provider
 
 - ### Create Dish
 - ### Edit Dish
