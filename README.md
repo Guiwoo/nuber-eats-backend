@@ -333,9 +333,18 @@
 
   - <b>See Restaurants by Category (Pagingation)</b>
 
+    - pagination "Use Common Dto for doing pagination set a default = '1' "
+    - [TypeOrm Find Where](https://typeorm.io/#/find-options/basic-options)
+
   - <b>See Restaurants (pagination)</b>
 
+    - Call All restaurants [FindAndCount](https://typeorm.io/#/find-options)
+
   - <b>See Restaurant</b>
+
+    - Get a Restaurant FindOne(with restaurant id)
+
+  - <b>Search Restaurant</b>
 
 - ### Restaurant Update
 
@@ -347,6 +356,19 @@
 
   - <b>Delete Restaurant</b>
 
+## Dish
+
+- Create Entity
+
+  - Restaurant Can have Many dishes, Dish can Have one Restauarnt !!
+  - So OneToMany and ManyToOne
+  - Needs a Restaurant Id, Don't wanna load whole relationship
+
 - ### Create Dish
 - ### Edit Dish
 - ### Delete Dish
+
+- ### Orders CRUD
+- ### Orders Subscription (Owner,Customer,Delivery)
+
+- ### Payments (Cron Jobs)
