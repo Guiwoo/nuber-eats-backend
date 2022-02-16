@@ -363,6 +363,8 @@
   - Restaurant Can have Many dishes, Dish can Have one Restauarnt !!
   - So OneToMany and ManyToOne
   - Needs a Restaurant Id, Don't wanna load whole relationship
+  - [Column Types](https://orkhan.gitbook.io/typeorm/docs/entities#column-types)
+    - Can give a Options !! "Can replace with one to many, many to one"
 
 - ### Create Dish
 - ### Edit Dish
