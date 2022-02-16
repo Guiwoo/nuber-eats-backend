@@ -327,9 +327,14 @@
 - ### Restaurant Read
 
   - <b>See Categories</b>
+
     - ComputeField Dynamic Field [ResolvField](https://docs.nestjs.com/graphql/resolverss)
+    - Restaurant Count with Parent decorator
+
   - <b>See Restaurants by Category (Pagingation)</b>
+
   - <b>See Restaurants (pagination)</b>
+
   - <b>See Restaurant</b>
 
 - ### Restaurant Update
