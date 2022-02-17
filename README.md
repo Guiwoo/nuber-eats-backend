@@ -399,7 +399,15 @@
         - In Order Don't care how many orders dish got need to care how many orders not a how many dishes in this relation
 
 - ### Create Order
+
   - OrderResolver and OrderService difined and Injected setting
+  - #### Why Need OrderItem
+
+    - When order created ? Finished on DishOption so don't need to care
+    - While creating Order Entity don't need to care inverseWay
+    - PickType fixed On Create-order.dto.ts ,add entity on app module
+    - <b>Need to fix Bug "EverySingle Order need to pass DishInput ? Ridiculus"</b>
+
 - ### Orders Subscription (Owner,Customer,Delivery)
 
 - ### Payments (Cron Jobs)
