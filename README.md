@@ -398,6 +398,8 @@
       - So where should put JoinTable ?
         - In Order Don't care how many orders dish got need to care how many orders not a how many dishes in this relation
 
+- ### Create Order
+  - OrderResolver and OrderService difined and Injected setting
 - ### Orders Subscription (Owner,Customer,Delivery)
 
 - ### Payments (Cron Jobs)

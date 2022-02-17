@@ -19,8 +19,8 @@ import { Restaurant } from './restaurant/entities/restaurant.entity';
 import { Category } from './restaurant/entities/category.entity';
 import { RestaurantModule } from './restaurant/restaurant.module';
 import { Dish } from './restaurant/entities/dish.entity';
-import { OrderModule } from './order/order.module';
-import { Order } from './order/entities/order.entity';
+import { Order } from './orders/entities/order.entity';
+import { OrdersModule } from './orders/orders.module';
 
 @Module({
   imports: [
@@ -68,7 +68,7 @@ import { Order } from './order/entities/order.entity';
     AuthModule,
     UsersModule,
     RestaurantModule,
-    OrderModule,
+    OrdersModule,
   ],
   controllers: [],
   providers: [],
