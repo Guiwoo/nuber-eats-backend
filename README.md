@@ -407,6 +407,8 @@
     - While creating Order Entity don't need to care inverseWay
     - PickType fixed On Create-order.dto.ts ,add entity on app module
     - <b>Need to fix Bug "EverySingle Order need to pass DishInput ? Ridiculus"</b>
+      - Don't use PickType, No need to get whole Dish need only Dish ID !
+      - So create Coustom Object for InputType
 
 - ### Orders Subscription (Owner,Customer,Delivery)
 

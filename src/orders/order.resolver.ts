@@ -13,10 +13,10 @@ export class OrderResolver {
   @Mutation((_) => CreateOrderOutput)
   @Role(['Client'])
   async createOrder(
-    @AuthUser() createUser: User,
+    @AuthUser() customer: User,
     @Args('input')
     createOrderInput: CreateOrderInput,
   ): Promise<CreateOrderOutput> {
-    return { ok: true };
+    return this.orderService.createOrder(customer, createOrderInput);
   }
 }
