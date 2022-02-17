@@ -368,8 +368,22 @@
   - Make a New Resolver, add Provider
 
 - ### Create Dish
+
+  - CreateDish Dto Use Picktype([inner things]) required
+  - Set a one Field For new restuarntId
+  - Resolver ? Only Ower can make a Dish use decorator for owner, AuthUser to give owner info
+  - service ? findOne by restaurantId, and add dish with json type how ?
+
+    - Using Spread operation { ...createDishInput, restaurant }
+
 - ### Edit Dish
+
+  - Same as CreateDish but need to get restaurant "Use relations"
+    - relations: ['restaurant'] can acess to restaurant like dishes.restaurant.ownerid like this
+
 - ### Delete Dish
+
+  - Same as EditDish
 
 - ### Orders CRUD
 - ### Orders Subscription (Owner,Customer,Delivery)
