@@ -32,18 +32,41 @@ export class OrderService {
           error: 'This restaurant does not exist',
         };
       }
-      items.forEach(async (item) => {
+      for (const item of items) {
         const dish = await this.dishes.findOne(item.dishId);
         if (!dish) {
-          // abort this whole thing
+          return {
+            ok: false,
+            error: 'Dish Not Found',
+          };
         }
-        await this.orderItems.save(
-          this.orderItems.create({
-            dish,
-            options: item.options,
-          }),
-        );
-      });
+        console.log(`Dish Price : ${dish.price}`);
+        for (const itemOption of item.options) {
+          const dishOption = dish.options.find(
+            (dishOption) => dishOption.name === itemOption.name,
+          );
+          if (dishOption) {
+            if (dishOption.extra) {
+              console.log(`$USD + ${dishOption.extra}`);
+            } else {
+              const dishOptionChoice = dishOption.choices.find(
+                (c) => c.name === itemOption.choice,
+              );
+              if (dishOptionChoice) {
+                if (dishOptionChoice.extra) {
+                  console.log(`$USD + ${dishOptionChoice.extra}`);
+                }
+              }
+            }
+          }
+        }
+        // await this.orderItems.save(
+        //   this.orderItems.create({
+        //     dish,
+        //     options: item.options,
+        //   }),
+        // );
+      }
       // const order = await this.orders.save(
       //   this.orders.create({
       //     customer,
