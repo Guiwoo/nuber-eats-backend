@@ -385,7 +385,19 @@
 
   - Same as EditDish
 
-- ### Orders CRUD
+## Orders CRUD
+
+- ### SetUp
+
+  - Order Entity
+    - User? Many To One why ? User can have bunch of orders but One order can have one User!
+      - Need to figure out on userEntity and restaurantEntity as well
+    - onDelete Set Null keeping the order, deliver
+    - Dish ? [Many To Many](https://orkhan.gitbook.io/typeorm/docs/many-to-many-relations)
+      - @JoinTable() is required for @ManyToMany relations. You must put @JoinTable on one (owning) side of relation.
+      - So where should put JoinTable ?
+        - In Order Don't care how many orders dish got need to care how many orders not a how many dishes in this relation
+
 - ### Orders Subscription (Owner,Customer,Delivery)
 
 - ### Payments (Cron Jobs)
