@@ -427,7 +427,15 @@
 
   - Use npm [graphql-subscriptions](https://github.com/apollographql/graphql-subscriptions#readme)
   - Follow the Tutorial
+
     - 1. Error ("Could not connect to websocket endpoint ws://localhost:3000/graphql.")
       - installSubscriptionHandlers:true, on AppModule graphQlmodule
+    - 2. Can't get a token jwtTokenMiddleware does not work on WS side
+
+      - remove extends NestModule
+      - get a token on http side and jwt side handle on AuthGuard , Graphql module
+
+    - 3. Do JwtMiddleWare work on Auth Guard
+    - 4. Get User each side(HTTP,WS)
 
 - ### Payments (Cron Jobs)
