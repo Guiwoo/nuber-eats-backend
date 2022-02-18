@@ -420,5 +420,8 @@
   - [] Pagination add it later
   - who can read order history ? [Owner, Customer, Deliver]
   - [Flat](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
+  - Get-order
+    - get input orderId and find order with relation restaurant why ? need to get restauarnt owner !
+    - How to figure out customerId and diliveryId ? ,User RelationId on orderEntity
 - ### Orders Subscription (Owner,Customer,Delivery)
 - ### Payments (Cron Jobs)
