@@ -416,6 +416,9 @@
 
     - How Powerful of Json tpe don't need to make new resolver,doto,service,entity
 
+- ### Read Order
+  - [] Pagination add it later
+  - who can read order history ? [Owner, Customer, Deliver]
+  - [Flat](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
 - ### Orders Subscription (Owner,Customer,Delivery)
-
 - ### Payments (Cron Jobs)
