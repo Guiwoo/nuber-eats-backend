@@ -424,4 +424,10 @@
     - get input orderId and find order with relation restaurant why ? need to get restauarnt owner !
     - How to figure out customerId and diliveryId ? ,User RelationId on orderEntity
 - ### Orders Subscription (Owner,Customer,Delivery)
+
+  - Use npm [graphql-subscriptions](https://github.com/apollographql/graphql-subscriptions#readme)
+  - Follow the Tutorial
+    - 1. Error ("Could not connect to websocket endpoint ws://localhost:3000/graphql.")
+      - installSubscriptionHandlers:true, on AppModule graphQlmodule
+
 - ### Payments (Cron Jobs)
