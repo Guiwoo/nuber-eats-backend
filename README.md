@@ -445,4 +445,6 @@
   - Order Status (Customer,Delivery,Owner)
   - Pending Pickup Order (Delivery)
 
+    - eager relationship
+
 - ### Payments (Cron Jobs)
