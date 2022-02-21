@@ -38,6 +38,10 @@ export class PaymentsService {
           error: 'You are not allowed to do this',
         };
       }
+      restaurant.isPromted = true;
+      const date = new Date();
+      date.setDate(date.getDate() + 7);
+      restaurant.promtedUntil = date;
       await this.payments.save(
         this.payments.create({
           transactionId,
@@ -45,6 +49,7 @@ export class PaymentsService {
           restaurant,
         }),
       );
+      this.restaurnats.save(restaurant);
       return {
         ok: true,
       };
@@ -69,20 +74,5 @@ export class PaymentsService {
         error: "Can't load any payments",
       };
     }
-  }
-
-  @Cron('30 * * * * *')
-  checkForPayments() {
-    console.log('Checking for payment......(cron)');
-  }
-
-  @Interval(5000)
-  checkForPayments2() {
-    console.log('Checking for payment......(interval)');
-  }
-
-  @Timeout(2000)
-  checkForPayments3() {
-    console.log('✅Checking for payment......(Timeout)');
   }
 }
