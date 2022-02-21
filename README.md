@@ -448,4 +448,15 @@
     - eager relationship
 
 - ### Payments (Cron Jobs)
+
   - [Paddle](https://paddle.com) "Only for Digital thigns"
+
+- ### Task Scheduling
+  - Time interval! Cool Feature
+  - [TaskScheduling](https://docs.nestjs.kr/techniques/task-scheduling)
+    - Cron Pattern
+      - 초,분,시,일,월,요일
+    - Dynamic Api ("TimeOut","Interval")
+    - Dynamic cron jobs
+      - constructor(private schedulerRegistry: SchedulerRegistry) {}
+      - Possible to let them stop
