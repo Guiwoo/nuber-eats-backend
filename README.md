@@ -427,6 +427,7 @@
 
   - Use npm [graphql-subscriptions](https://github.com/apollographql/graphql-subscriptions#readme)
   - Follow the Tutorial
+  - This is Demo Version, check on [graphql-redis-subscriptions](https://github.com/davidyaha/graphql-redis-subscriptions)
 
     - 1. Error ("Could not connect to websocket endpoint ws://localhost:3000/graphql.")
       - installSubscriptionHandlers:true, on AppModule graphQlmodule
@@ -437,5 +438,11 @@
 
     - 3. Do JwtMiddleWare work on Auth Guard
     - 4. Get User each side(HTTP,WS)
+
+  - Filter subscriptions [Check Here]("https://docs.nestjs.com/graphql/subscriptions#filtering-subscriptions")
+
+  - Pending Orders (Owner)
+  - Order Status (Customer,Delivery,Owner)
+  - Pending Pickup Order (Delivery)
 
 - ### Payments (Cron Jobs)

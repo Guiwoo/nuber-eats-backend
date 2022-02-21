@@ -1,6 +1,9 @@
+import { Inject } from '@nestjs/common';
 import { Query, Args, Mutation, Resolver, Subscription } from '@nestjs/graphql';
+import { PubSub } from 'graphql-subscriptions';
 import { AuthUser } from 'src/auth/authuser.decorator';
 import { Role } from 'src/auth/role.decorator';
+import { NEW_PENDING_ORDER, PUB_SUB } from 'src/common/common.constants';
 import { User } from 'src/users/entities/user.entity';
 import { CreateOrderInput, CreateOrderOutput } from './dtos/create-order.dto';
 import { EditOrderInput, EditOrderOutput } from './dtos/edit-order.dto';
@@ -8,13 +11,13 @@ import { GetOrderInput, GetOrderOutput } from './dtos/get-order.dto';
 import { GetOrdersInput, GetOrdersOutput } from './dtos/get-orders.dto';
 import { Order } from './entities/order.entity';
 import { OrderService } from './orders.service';
-import { PubSub } from 'graphql-subscriptions';
-
-const pubsub = new PubSub();
 
 @Resolver((of) => Order)
 export class OrderResolver {
-  constructor(private readonly orderService: OrderService) {}
+  constructor(
+    private readonly orderService: OrderService,
+    @Inject(PUB_SUB) private readonly pubsub: PubSub,
+  ) {}
 
   @Mutation((_) => CreateOrderOutput)
   @Role(['Client'])
@@ -53,16 +56,17 @@ export class OrderResolver {
     return this.orderService.editOrder(user, editOrderInput);
   }
 
-  @Mutation((returns) => Boolean)
-  potatoReady() {
-    pubsub.publish('Potato', { readyPotato: 'Your Potato is Ready Love you' });
-    return true;
-  }
-
-  @Subscription((returns) => String)
-  @Role(['Any'])
-  readyPotato(@AuthUser() user: User) {
-    console.log(user);
-    return pubsub.asyncIterator('Potato');
+  @Subscription((returns) => Order, {
+    filter: ({ pendingOrders: { ownerId } }, _, { user }) => {
+      console.log(ownerId, user.id);
+      return ownerId === user.id;
+    },
+    resolve: ({ pendingOrders: { order } }) => {
+      return order;
+    },
+  })
+  @Role(['Owner'])
+  pendingOrders() {
+    return this.pubsub.asyncIterator(NEW_PENDING_ORDER);
   }
 }
