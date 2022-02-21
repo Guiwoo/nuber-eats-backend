@@ -448,3 +448,4 @@
     - eager relationship
 
 - ### Payments (Cron Jobs)
+  - [Paddle](https://paddle.com) "Only for Digital thigns"
