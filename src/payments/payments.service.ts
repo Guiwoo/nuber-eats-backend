@@ -1,9 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { Cron, Interval, Timeout } from '@nestjs/schedule';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Restaurant } from 'src/restaurant/entities/restaurant.entity';
 import { User } from 'src/users/entities/user.entity';
-import { Repository } from 'typeorm';
+import { LessThan, Repository } from 'typeorm';
 import {
   CreatePaymentInput,
   CreatePaymentOutput,
@@ -74,5 +73,18 @@ export class PaymentsService {
         error: "Can't load any payments",
       };
     }
+  }
+
+  // cna do Cron every 00:00 can send email or else
+  async checkPromtedRestaurants() {
+    const restaurants = await this.restaurnats.find({
+      isPromted: true,
+      promtedUntil: LessThan(new Date()),
+    });
+    restaurants.forEach(async (r) => {
+      r.isPromted = false;
+      r.promtedUntil = null;
+      await this.restaurnats.save(r);
+    });
   }
 }
