@@ -19,6 +19,7 @@ import {
   EditRestaurantInput,
   EditRestaurantOutput,
 } from './dtos/edit-restaurant.dto';
+import { MyRestaurantOutput } from './dtos/myRestaurant.dto';
 import { RestaurantInput, RestaurantOutput } from './dtos/restaurant.dto';
 import { RestaurantsInput, RestaurantsOutput } from './dtos/restaurants.dto';
 import {
@@ -39,6 +40,22 @@ export class RestaurantService {
     private readonly dishes: Repository<Dish>,
     private readonly categories: CategoryRepository,
   ) {}
+
+  async myRestaurans(owner: User): Promise<MyRestaurantOutput> {
+    try {
+      const restaurants = await this.restaurants.find({ owner });
+      return {
+        ok: true,
+        restaurants,
+      };
+    } catch (error) {
+      console.log(error);
+      return {
+        ok: false,
+        error: 'Could not find any Restaurant',
+      };
+    }
+  }
 
   async createRestaurant(
     owner: User,
