@@ -14,4 +14,7 @@ export class CreateRestaurantInput extends PickType(Restaurant, [
 // Can change decorator on OmitType OmitType(Restaurant, ['id'],InputType)
 
 @ObjectType()
-export class CreateRestaurantOutput extends CoreOutput {}
+export class CreateRestaurantOutput extends CoreOutput {
+  @Field((type) => Number)
+  restaurantId?: number;
+}
